@@ -15,3 +15,17 @@
 #   5.时间戳 --> 'Wed Apr  3 15:59:42 2019'  time.ctime(time.time())
 #   6.结构化的时间 --> 'Wed Apr  3 15:59:42 2019'  time.asctime(time.localtime())
 import time
+import datetime
+
+# datetime
+now_datetime = datetime.datetime.now()
+# datetime --> timetuple
+now_timetuple = now_datetime.timetuple()
+# timetuple -- > 时间戳
+now_tc = time.mktime(now_timetuple)
+# 时间戳 --> datetime
+now_datetime = datetime.datetime.fromtimestamp(now_tc)
+# datetime --> str
+now_str = now_datetime.strftime("%Y-%m-%d %H:%M:%S")
+# str --> datetime
+now_datetime = datetime.datetime.strptime(now_str, "%Y-%m-%d %H:%M:%S")
