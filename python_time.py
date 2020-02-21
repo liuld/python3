@@ -29,3 +29,5 @@ now_datetime = datetime.datetime.fromtimestamp(now_tc)
 now_str = now_datetime.strftime("%Y-%m-%d %H:%M:%S")
 # str --> datetime
 now_datetime = datetime.datetime.strptime(now_str, "%Y-%m-%d %H:%M:%S")
+# tomorrow
+tomorrow = (datetime.datetime.now() + datetime.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S.%f')
